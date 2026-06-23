@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切版練習</title>
+    <link rel="stylesheet" href="css/my.css"><!-- 連結CSS -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: var(--bg-primary);
+            font-family: "LXGW WenKai Mono TC", monospace;
+        }
+        .wrapper{
+            width: 1024px;
+            margin-top: 0;/* margin 與外面的距離*/             
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .imgbox{
+            width: 1024px;
+            height: 270px;
+            background-color: rgb(123,234,180);
+            background-image: url(image/car1.avif);
+            background-position: center center;/*背景位子 */
+            background-size: cover;
+        }
+        nav{
+            background-color: var(--bg-secondary);
+            text-align: center;/* 文字置中 */
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        nav ul{
+            display: inline-block;/* 點點位子 */
+        }
+        nav ul li{
+            float: left;
+            list-style-type: none;/* 點點關掉 */
+        }
+        nav ul li a{
+            text-decoration: none;/* 取消底線 */
+            display: block;/* 格子 */
+            background-color: var(--primary-color);
+            margin-right: 15px;
+            padding-top: 15px; /*padding 內距 */
+            padding-bottom: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 5px;/* 圓潤度 */
+            box-shadow: 2px 2px 2px 2px var(--bg-primary);/*x軸 y軸 模糊度 渲染 */   
+            transition: border-radius 2s,box-shadow 2s;/* 按鈕變換的時間差 */
+            color: var(--text-primary);
+        }
+        nav ul li a:hover{
+            border-radius: 20px;
+            box-shadow: 2px 2px 2px 2px var(--text-secondary);
+            background-color: var(--secondary-color);
+            color: var(--bg-primary);
+        }
+        .content{
+            background-color:var(--bg-secondary);
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .content h1{
+            color:var(--primary-color);
+            font-size: 36px;
+        }
+        .content p{
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--text-secondary)
+        }
+        .content a{
+            display: block;
+            background-color:var(--primary-color);
+            width:130px;
+            height: 40px;
+            margin: 0 auto;/* y軸 X軸 */
+            text-decoration: none;
+            color:var(--bg-primary);
+            font-size: 20px;
+            font-weight: bold;/* 粗體 */
+            line-height: 40px;/* 垂直置中 */
+            border-radius: 8px;
+            box-shadow: 2px 2px 2px 2px var(--secondary-color);
+            transition: box-shadow 0.5s, background-color 0.5s, color 0.5s;
+        }
+        .content a:hover{
+            box-shadow: 2px 2px 2px 2px var(--secondary-color);
+            background-color: var(--secondary-color);
+            color: var(--text-primary);
+        }
+        .footer{
+            background-color:var(--bg-secondary); 
+            text-align: center;             
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 5px;
+        }
+        .footer p{
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+        @media screen and (max-width:1200px) and (min-width:1025px){/* 設定不同大小畫面顯示不同 */
+            .imgbox{
+                background-image: url(image/car3.avif);
+                background-position: 66% 66%;
+            }
+
+        }
+        @media screen and (max-width:1024px){/*手機畫面要改變的格式 */
+            .wrapper{
+                width: 100%;
+            }
+            .imgbox{
+                width: 100%;
+                background-image: url(image/car2.avif);
+                height: 150px;
+            }
+            nav ul{
+                display: block;
+                padding-left: 10px;
+                margin: 0;
+            }
+            nav ul li{
+                float: none;
+                margin-bottom: 10px;
+            }
+            nav ul li a{
+                background-color: var(--primary-color);
+                color: var(--text-primary);
+            }
+            .content{
+                padding-left: 10px;
+                line-height: 1.5;
+                text-align: left;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <!-- # id    . class -->
+    <!-- 註解 ctrl+/ -->
+    <!-- 排版 shift+alt+f -->
+    <div class="wrapper">
+        <div class="banner">
+            <div class="imgbox"></div>
+            <nav><!-- 選單 -->
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-gauge-high btn-text-secondary"></i>首頁</a></li>
+                    <li><a href="#"><i class="fa-solid fa-flag-checkered btn-text-secondary"></i>最新消息</a></li>
+                    <li><a href="#"><i class="fa-solid fa-shop btn-text-secondary"></i>合作店家</a></li>
+                    <li><a href="#"><i class="fa-solid fa-car-rear btn-text-secondary"></i>關於我們</a></li>
+                    <li><a href="#"><i class="fa-solid fa-phone btn-text-secondary"></i>聯絡我們</a></li>
+                </ul>
+            </nav>
+            <!-- nav>ul>li*5>a -->
+            <!-- <nav>
+                <ul>
+                    <li><a href="#">xxx</a></li>
+                    <li><a href="#">xxx</a></li>
+                    <li><a href="#">xxx</a></li>
+                    <li><a href="#">xxx</a></li>
+                    <li><a href="#">xxx</a></li>
+                </ul>
+            </nav> -->
+
+        </div>
+        <div class="content">
+            <h1><i class="fa-solid fa-car-side fa-3x"style="color: #335300;"></i>歡迎光臨</h1>
+            <p class="fw-100">原因什麼事爭取諮詢抓住必然結果你說圖文不過中港路現代文本和你，註冊時間相機市場數碼主義調節當我台南肌膚海外有可能，皮膚等等演唱製造，電視你們陽明山矛盾出生，市場價留下現金某個，有的評估效益依據發達篇文章首次實業一旦是從，無疑配套計劃主角充滿機械網頁可以說。</p><!-- ctlorem+幾個字 -->
+            <p class="fw-900">面向效率看來取得附近很多人將會簽名環境承擔，有關部門國外檢測治療在此本地下載區別，去了程式人員僅僅藥物天使評價會計位置小孩萬元靜靜，全市有很多看來我一，老婆二。</p>
+            <p>黑暗好激動年輕阿宅人民共和國，為何青草湖雙手倒是你說指導校長道德忘記，發出臺灣案件，一步買了男生檔。</p>
+            <a href="#">了解更多</a>
+        </div>
+        <div class="footer">
+            <p>power by nb28 2026.05.28</p>
+        </div>
+    </div>
+</body>
+
+</html>

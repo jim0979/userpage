@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Chiron+GoRound+TC:wght@200..900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Gasoek+One&family=LXGW+WenKai+Mono+TC&family=M+PLUS+1p&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+Nabataean&family=Noto+Sans+TC:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root{ 
+    /* 主色（按鈕、重點區塊）：數位香檳金 */
+    --primary-color:#D4AF37;
+
+    /* 輔色（Hover、圖示、裝飾）：前衛霧金 */
+    --secondary-color:#AA8000;
+
+    /* 背景主色：金屬冷霧灰 */
+    --bg-primary:#22252A;
+
+    /* 背景輔色：石墨碳纖維灰 */
+    --bg-secondary:#2D323A;
+
+    /* 文字主色：白金高亮色 */
+    --text-primary:#FFFFFF;
+
+    /* 文字輔色：霧銀灰（與金屬背景對比清晰） */
+    --text-secondary:#A0A5B0;
+}
+/* 字體粗度 */
+.fw-100{
+    font-weight: 100;
+}
+.fw-200{
+    font-weight: 200;
+}
+.fw-300{
+    font-weight: 300;
+}
+.fw-400{
+    font-weight: 400;
+}
+.fw-500{
+    font-weight: 500;
+}
+.fw-600{
+    font-weight: 600;
+}
+.fw-700{
+    font-weight: 700;
+}
+.fw-800{
+    font-weight: 800;
+}
+.fw-900{
+    font-weight: 900;
+}
+/* 字體顏色 */
+.btn-text-primary{
+    color:var(--text-primary)
+}
+.btn-text-secondary{
+    color:var(--text-secondary)
+}
+
+/* roller合籍 有.roller-l r t b 分別是左右上下 可以套用格式 */
+
+.roller-l {
+            position: relative;
+            overflow: hidden;
+            padding: 15px;
+        }
+
+        .roller-l .roller_box {
+            position: absolute;
+            top: 0;
+            left: 100%;
+
+            width: 100%;
+            height: 100%;
+
+            /* 半透明白色遮罩 */
+            background-color: rgba(255, 255, 255, 0.12);
+
+            /* 毛玻璃效果 */
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+
+            /* 內容置中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: left 0.8s ease;
+        }
+
+        .roller-l:hover .roller_box {
+            left: 0;
+        }
+
+
+
+        .roller-r {
+            position: relative;
+            overflow: hidden;
+            padding: 15px;
+        }
+
+        .roller-r .roller_box {
+            position: absolute;
+            top: 0;
+            right: 100%;
+
+            width: 100%;
+            height: 100%;
+
+            /* 半透明白色遮罩 */
+            background-color: rgba(255, 255, 255, 0.12);
+
+            /* 毛玻璃效果 */
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+
+            /* 內容置中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: right 0.8s ease;
+        }
+
+        .roller-r:hover .roller_box {
+            right: 0;
+        }
+
+
+
+        .roller-t {
+            position: relative;
+            overflow: hidden;
+            padding: 15px;
+        }
+
+        .roller-t .roller_box {
+            position: absolute;            
+            top: 100%;
+
+            width: 100%;
+            height: 100%;
+
+            /* 半透明白色遮罩 */
+            background-color: rgba(255, 255, 255, 0.12);
+
+            /* 毛玻璃效果 */
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+
+            /* 內容置中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: top 0.8s ease;
+        }
+
+        .roller-t:hover .roller_box {
+            top: 0;
+        }
+
+
+        .roller-b {
+            position: relative;
+            overflow: hidden;
+            padding: 15px;
+        }
+
+        .roller-b .roller_box {
+            position: absolute;            
+            bottom: 100%;
+
+            width: 100%;
+            height: 100%;
+
+            /* 半透明白色遮罩 */
+            background-color: rgba(255, 255, 255, 0.12);
+
+            /* 毛玻璃效果 */
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+
+            /* 內容置中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: bottom 0.8s ease;
+        }
+
+        .roller-b:hover .roller_box {
+            bottom: 0;
+        }
+
+        /*背景圖*/
+        .bg-cover{
+            background-position: center center;
+            background-size: cover;
+        }

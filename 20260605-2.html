@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch5 表格(table)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #FF8C00;
+            --light-color: #FFF8E7;
+        }
+
+        body {
+            background: linear-gradient(rgba(255, 248, 231, .95),
+                    rgba(255, 248, 231, .95));
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        .container {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .display-3 {
+            color: var(--primary-color);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, .15);
+        }
+
+        .table {
+            background-color: transparent;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .table-dark {
+            background: linear-gradient(90deg,
+                    #8B4513,
+                    #A0522D);
+        }
+
+        .table-dark th {
+            text-align: center;
+            color: white;
+        }
+
+        tbody tr {
+            transition: .3s;
+        }
+
+        tbody tr:hover {
+            transform: scale(1.01);
+        }
+
+        caption {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            caption-side: top;
+            text-align: center;
+        }
+
+        .table td {
+            vertical-align: middle;
+        }
+
+        @media screen and (max-width:768px) {
+
+            .table-rwd thead,
+            caption {
+                display: none;
+            }
+
+            .table-rwd tbody tr {
+                display: block;
+                margin-top: 15px;
+                border: 2px solid var(--primary-color);
+                border-radius: 5px;
+            }
+
+            .table-rwd tbody td {
+                display: block;
+                overflow: hidden;
+                /* 防止表格跑版 */
+
+            }
+
+            .table-rwd tbody tr td::before {
+                content: attr(data-th)" : ";
+                /* data-th 取用下面的標籤名*/
+                font-size: 20px;
+                font-weight: bold;
+                color: var(--secondary-color);
+                display: block;
+                float: left;
+                width: 30%;
+                text-align: right;
+                padding-right: 1em;
+            }
+
+            .table-rwd tbody tr td span {
+                display: block;
+                float: left;
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="display-3 text-center fw-bold store-title mb-4"> <i class="fa-solid fa-mug-hot"></i> 小葉飲品專賣店 </div>
+        <table class="table mt-3 table-bordered table-hover table-striped table-rwd shadow-lg">
+            <!-- mt-3 上面間距 bordered 框線 hover 觸動反饋 striped 單數行會有網底-->
+            <caption>飲品菜單</caption>
+            <thead class="table-dark">
+                <tr>
+                    <th>產品編號</th>
+                    <th>產品名稱</th>
+                    <th>產品價格</th>
+                    <th>產品數量</th>
+                    <th>產品備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-warning">
+                    <td data-th="產品編號"><span>001</span></td>
+                    <td data-th="產品名稱"><span>紅茶</span></td>
+                    <td data-th="產品價格"><span>30元</span></td>
+                    <td data-th="產品數量"><span>50</span></td>
+                    <td data-th="產品備註"><span>招牌飲品</span></td>
+                </tr>
+                <tr class="table-primary">
+                    <td data-th="產品編號"><span>002</span></td>
+                    <td data-th="產品名稱"><span>綠茶</span></td>
+                    <td data-th="產品價格"><span>30元</span></td>
+                    <td data-th="產品數量"><span>45</span></td>
+                    <td data-th="產品備註"><span>清爽順口</span></td>
+                </tr>
+                <tr class="table-success">
+                    <td data-th="產品編號"><span>003</span></td>
+                    <td data-th="產品名稱"><span>烏龍茶</span></td>
+                    <td data-th="產品價格"><span>35元</span></td>
+                    <td data-th="產品數量"><span>40</span></td>
+                    <td data-th="產品備註"><span>茶香濃郁</span></td>
+                </tr>
+                <tr class="table-info">
+                    <td data-th="產品編號"><span>004</span></td>
+                    <td data-th="產品名稱"><span>冬瓜茶</span></td>
+                    <td data-th="產品價格"><span>35元</span></td>
+                    <td data-th="產品數量"><span>30</span></td>
+                    <td data-th="產品備註"><span>古早味</span></td>
+                </tr>
+                <tr class="table-secondary">
+                    <td data-th="產品編號"><span>005</span></td>
+                    <td data-th="產品名稱"><span>珍珠奶茶</span></td>
+                    <td data-th="產品價格"><span>60元</span></td>
+                    <td data-th="產品數量"><span>60</span></td>
+                    <td data-th="產品備註"><span>人氣第一</span></td>
+                </tr>
+                <tr class="table-danger">
+                    <td data-th="產品編號"><span>006</span></td>
+                    <td data-th="產品名稱"><span>奶綠</span></td>
+                    <td data-th="產品價格"><span>55元</span></td>
+                    <td data-th="產品數量"><span>35</span></td>
+                    <td data-th="產品備註"><span>香濃順口</span></td>
+                </tr>
+                <tr class="table-warning">
+                    <td data-th="產品編號"><span>007</span></td>
+                    <td data-th="產品名稱"><span>檸檬紅茶</span></td>
+                    <td data-th="產品價格"><span>50元</span></td>
+                    <td data-th="產品數量"><span>25</span></td>
+                    <td data-th="產品備註"><span>酸甜解膩</span></td>
+                </tr>
+                <tr class="table-primary">
+                    <td data-th="產品編號"><span>008</span></td>
+                    <td data-th="產品名稱"><span>百香綠茶</span></td>
+                    <td data-th="產品價格"><span>55元</span></td>
+                    <td data-th="產品數量"><span>28</span></td>
+                    <td data-th="產品備註"><span>夏季推薦</span></td>
+                </tr>
+                <tr class="table-success">
+                    <td data-th="產品編號"><span>009</span></td>
+                    <td data-th="產品名稱"><span>芒果冰沙</span></td>
+                    <td data-th="產品價格"><span>80元</span></td>
+                    <td data-th="產品數量"><span>20</span></td>
+                    <td data-th="產品備註"><span>季節限定</span></td>
+                </tr>
+                <tr class="table-info">
+                    <td data-th="產品編號"><span>010</span></td>
+                    <td data-th="產品名稱"><span>黑糖鮮奶</span></td>
+                    <td data-th="產品價格"><span>75元</span></td>
+                    <td data-th="產品數量"><span>22</span></td>
+                    <td data-th="產品備註"><span>熱銷商品</span></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

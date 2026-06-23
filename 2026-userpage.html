@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人首頁</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        :root {
+            /* Background */
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #172033;
+
+            /* Text */
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+
+            /* Brand Colors */
+            --primary: #38bdf8;
+            --primary-dark: #0ea5e9;
+
+            --accent: #8b5cf6;
+            --accent-dark: #7c3aed;
+
+            /* Status */
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+
+            /* Border */
+            --border-color: #334155;
+
+            /* Shadow */
+            --shadow-color: rgba(0, 0, 0, 0.25);
+
+            /* Layout */
+            --max-width: 1200px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+
+            /* Animation */
+            --transition: 0.3s ease;
+        }      
+        body{
+            background-color: var(--bg-primary);
+        }  
+        .s01{
+            background-color: var(--bg-card);
+            height: 100vh;/* 裝置多高就多高 */
+        }
+        .s01 .box01{
+            width: 200px;
+            height: 200px;
+            background-color: var(--border-color);
+            position: absolute;/* 絕對定位 設定位子在哪就在哪*/
+            top: 0;
+            left: 0;
+        }
+        .s01 .box02{
+            width: 200px;
+            height: 200px;
+            background-color: var(--border-color);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .s01 .box03{
+            width: 200px;
+            height: 200px;
+            background-color: var(--border-color);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .s01 .box04{
+            width: 200px;
+            height: 200px;
+            background-color: var(--border-color);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .s01 .userimage{
+            position: absolute;
+            background-color: var(--bg-secondary);
+            top: 100px;
+            left: 100px;
+            bottom: 100px;
+            right: 100px;
+            background-image: url(image/dog1.jpg);
+            background-size: cover;
+            background-position:center center ;
+            border-radius: 15px;
+            box-shadow: var(--shadow-color);
+        }
+        .usertext{
+            position: absolute;
+            top:55%;
+            right: 15%;
+        }
+        .s02{
+            background-color: var(--bg-primary);
+            text-align: center;
+            padding: 80px 10%;
+        }
+        .s02 h2{
+            font-size: 36px;
+            color: var(--text-muted);   
+        }
+        .s02 .card{
+            display: inline-block;
+            margin: 15px;
+            width: 240px;
+            background-color: var(--bg-card);
+            padding: 20px;
+            text-align: left;
+            border-radius: 12px;
+        }
+        .s02 .card h3{
+            color: var(--text-primary);
+            margin-top: 0;
+        }
+        .s02 .card p{
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        .s02 .card a{
+            background-color: var(--primary-dark);
+            padding: 10px 15px;
+            border-radius: 12px;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <section class="s01">
+        <div class="box01"></div>
+        <div class="box02"></div>
+        <div class="box03"></div>
+        <div class="box04"></div>
+        <div class="userimage"></div>
+        <div class="usertext">
+            <h1>小狗溝履歷</h1>
+            <hr>
+            <h2>應徵職位:汪汪汪</h2>
+            <p>座右銘:有得吃有得玩我還不 我是狗</p>
+        </div>
+    </section>
+    <section class="s02">
+        <h2>我的作品</h2>
+        <!-- 作品01 -->
+         <div class="card">
+            <h3>切版練習</h3>
+            <p>使用HTML與CSS練習切版</p>
+            <a href="http://127.0.0.1:5500/20260527-1.html" target="_blank">查看作品</a><!-- 跳新分頁 -->
+         </div>
+
+        <!-- 作品02 -->
+        <div class="card">
+            <h3>表格練習</h3>
+            <p>使用bootstrap練習排版表格與小視窗大視窗差異</p>
+            <a href="http://127.0.0.1:5500/20260605-2.html" target="_blank">查看作品</a>
+        </div>
+
+        <!-- 作品03 -->
+        <div class="card">
+            <h3>切版練習</h3>
+            <p>使用HTML與CSS練習切版</p>
+            <a href="#">查看作品</a>
+        </div>
+
+        <!-- 作品04 -->
+        <div class="card">
+            <h3>切版練習</h3>
+            <p>使用HTML與CSS練習切版</p>
+            <a href="#">查看作品</a>
+        </div>
+    </section>
+
+    
+</body>
+</html>
