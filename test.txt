@@ -1,4 +1,0 @@
-git status
-git init
-git commit -m "註解"
-git push
