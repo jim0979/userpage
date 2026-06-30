@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="zh-TW">
 
@@ -8,23 +7,192 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/my.css">
+    <style>
+        @import url('https://googleapis.com');
+
+        /* 全域核心設定：茶系溫潤配色 */
+        body {
+            background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%) !important;
+            font-family: 'Noto Sans TC', sans-serif;
+            color: #4a3728;
+            min-height: 100vh;
+        }
+
+        /* 標題優化：茶飲店招牌質感 */
+        .display-4,
+        .display-5 {
+            font-weight: 900 !important;
+            letter-spacing: 2px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(74, 55, 40, 0.15);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-bg-primary {
+            background: linear-gradient(135deg, #744a2c 0%, #8c5a3c 100%) !important;
+            /* 深焙茶色 */
+        }
+
+        .text-bg-success {
+            background: linear-gradient(135deg, #606c38 0%, #283618 100%) !important;
+            /* 抹茶綠色 */
+        }
+
+        /* ERP 核心表單卡片：微透玻璃擬態 */
+        #s01,
+        #s02 .col-md-6 {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 24px;
+            padding: 2.5rem !important;
+            box-shadow: 0 12px 32px rgba(74, 55, 40, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        /* 表單欄位與外框（微圓角與流暢過渡） */
+        .form-control,
+        .form-select {
+            border: 2px solid #d5bdaf !important;
+            border-radius: 12px !important;
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            color: #4a3728 !important;
+            transition: all 0.25s ease-in-out !important;
+        }
+
+        /* 欄位聚焦時：茶金發光效果 */
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #a3704c !important;
+            box-shadow: 0 0 0 0.25rem rgba(163, 112, 76, 0.25) !important;
+        }
+
+        /* 表單標籤與文字強化 */
+        .form-label.fw-900 {
+            font-weight: 700 !important;
+            color: #5c412c;
+            margin-bottom: 0.6rem;
+        }
+
+        /* 核心群組容器：加料區與供應方式 */
+        #topping_group,
+        #supply_group {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid transparent;
+            border-radius: 14px;
+            padding: 1rem 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        /* 狀態框亮起時的 ERP 樣式校正 */
+        #topping_group.is-invalid,
+        #supply_group.is-invalid {
+            border-color: #dc3545 !important;
+            background: rgba(220, 53, 69, 0.03);
+        }
+
+        #topping_group.is-valid,
+        #supply_group.is-valid {
+            border-color: #198754 !important;
+            background: rgba(25, 135, 84, 0.03);
+        }
+
+        /* 點選框與單選鈕美化 (手搖圓潤感) */
+        .form-check-input {
+            border: 2px solid #b79477 !important;
+            cursor: pointer;
+        }
+
+        .form-check-input:checked {
+            background-color: #8c5a3c !important;
+            border-color: #8c5a3c !important;
+        }
+
+        /* 上架開關 (Switch) 視覺增強 */
+        .form-switch .form-check-input {
+            width: 2.5em !important;
+            height: 1.25em !important;
+        }
+
+        /* 按鈕美化：極致互動反饋 */
+        .btn {
+            border-radius: 12px !important;
+            font-weight: 700 !important;
+            padding: 0.6rem 1.5rem !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .btn:active {
+            transform: scale(0.96);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #a3704c 0%, #8c5a3c 100%) !important;
+            border: none !important;
+            box-shadow: 0 4px 12px rgba(140, 90, 60, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #b8825c 0%, #a3704c 100%) !important;
+            box-shadow: 0 6px 16px rgba(140, 90, 60, 0.4);
+        }
+
+        .btn-secondary {
+            background: #e3d5ca !important;
+            border: 2px solid #d5bdaf !important;
+            color: #6d4c33 !important;
+        }
+
+        .btn-secondary:hover {
+            background: #d5bdaf !important;
+            color: #4a3728 !important;
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #dda15e 0%, #bc6c25 100%) !important;
+            border: none !important;
+            color: white !important;
+            box-shadow: 0 4px 12px rgba(188, 108, 37, 0.3);
+        }
+
+        /* 排版細節微調修正 */
+        .text-end-mt-4 {
+            margin-top: 1.5rem !important;
+            margin-bottom: 1.5rem !important;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        /* 驗證提示文字細緻化 */
+        .valid-feedback {
+            color: #146c43 !important;
+            font-weight: 500;
+        }
+
+        .invalid-feedback {
+            color: #b02a37 !important;
+            font-weight: 500;
+        }
+    </style>
 </head>
 
 <body class="bg-light">
     <div class="container pt-5">
-        <div class="display-4 fw-900 text-center text-bg-primary py-2">產品建檔</div>
+        <div class="display-4 fw-900 text-center text-bg-primary py-2">🧋 Drink ERP 管理系統</div>
         <div class="row justify-content-center">
             <div class="col-ms-6 mt-3" id="s01">
                 <div class="mb-3 form-floating">
                     <input type="text" class="form-control form-control-lg" name="" id="pname" placeholder="">
-                    <label for="" class="form-label">產品名稱(1-6)</label>
+                    <label for="" class="form-label">🧋產品名稱(1-6)</label>
                     <div class="valid-feedback">產品名稱符合規定</div>
                     <div class="invalid-feedback">產品名稱不符合規定</div>
                 </div>
 
                 <div class="mb-3 form-floating">
                     <input type="number" class="form-control form-control-lg" value="1" min="1" max="10" id="pnum">
-                    <label for="pnum" class="form-label">數量(1-10)</label>
+                    <label for="pnum" class="form-label">📦數量(1-10)</label>
                     <div class="valid-feedback">數量符合規定</div>
                     <div class="invalid-feedback">數量不符合規定</div>
                 </div>
@@ -33,7 +201,7 @@
                 <div class="mb-3 form-floating">
                     <input type="text" class="form-control form-control-lg" list="datalistoption" id="pstandard"
                         placeholder="請選擇或輸入規格">
-                    <label for="pstandard" class="form-label">產品規格</label>
+                    <label for="pstandard" class="form-label">🧊冰塊</label>
                     <datalist id="datalistoption">
                         <option value="去冰"></option>
                         <option value="微冰"></option>
@@ -45,7 +213,7 @@
 
                 <div class="mb-3">
                     <select name="" id="cup" class="form-select form-select-lg is-invalid">
-                        <option value="" disabled selected class="text-center fw-900">***請選擇容量***</option>
+                        <option value="" disabled selected class="text-center fw-900">🥤容量</option>
                         <option value="特大(2000CC以上)">特大(2000CC以上)</option>
                         <option value="大(1000-2000CC)">大(1000-2000CC)</option>
                         <option value="中(500-1000CC)">中(500-1000CC)</option>
@@ -55,18 +223,13 @@
                     <div class="invalid-feedback">請選擇容量</div>
                 </div>
 
-                <div class="text-end-mt-4">
-                    <button class="btn btn-secondary" id="nobtn">取消</button>
-                    <button class="btn btn-primary" id="okbtn">確認</button>
-                </div>
-
                 <div class="mb-3 form-check form-switch">
                     <input type="checkbox" name="" id="pstatus" class="form-check-input" checked>
                     <label for="" class="form-check-label" id="pstatus_text">目前狀態:上架</label>
                 </div>
 
                 <div class="mb-3">
-                    <div class="form-label fw-900">可加配料：至少要加一個</div>
+                    <div class="form-label fw-900">🍮加料：至少要加一個</div>
                     <div id="topping_group" class="is-invalid">
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input topping_item" value="珍珠">
@@ -90,7 +253,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <div class="form-label fw-900">供應方式：請選擇一項</div>
+                    <div class="form-label fw-900">🔥供應方式：請選擇一項</div>
                     <div id="supply_group" class="is-invalid">
                         <div class="form-check form-check-inline">
                             <input type="radio" class="form-check-input supply_item" name="supply" value="冷飲">
@@ -109,18 +272,34 @@
                     <div class="invalid-feedback">未選擇供應方式</div>
                 </div>
 
+                <div class="d-flex justify-content-end gap-2 mt-4 mb-3">
+                    <button class="btn btn-secondary" id="nobtn">取消</button>
+                    <button class="btn btn-primary" id="okbtn">確認</button>
+                </div>
 
             </div>
         </div>
 
-        <div class="row mt-5 justtify-content-center d-none" id="s02">
-            <div class="display-5 fw-900 text-center text-bg-success py-2 rounded-3">產品建檔，明細確認</div>
-            <div class="col-md-6 p-3">
-                <div id="showmessage"></div>
-                <button class="btn btn-secondary mt-3 w-100">取消</button>
-                <button class="btn btn-warning mt-3 w-100">確認送出</button>
+        <!-- 修正點：移除 d-none 測試時好調整，原本的 justify 拼錯字已修正，寬度放大到 col-md-9 -->
+        <div class="row mt-5 justify-content-center d-none" id="s02">
+            <div class="col-md-9">
+                <div class="display-5 fw-900 text-center text-bg-success py-3 rounded-3 mb-4">產品建檔，明細確認</div>
+
+                <!-- 增加一個內嵌卡片，讓明細浮現出來 -->
+                <div class="card border-0 shadow-sm rounded-4 p-4 bg-white rgba-blur mb-4">
+                    <!-- JS 會把表格渲染到這個 div 裡面 -->
+                    <div id="showmessage"></div>
+                </div>
+
+                <!-- 按鈕區：改為橫向並排、加寬、置中 -->
+                <div class="d-flex justify-content-center gap-3 mt-4">
+                    <button class="btn btn-secondary py-3 px-5 fs-5 shadow-sm" style="min-width: 160px;">返回修改</button>
+                    <button class="btn btn-warning py-3 px-5 fs-5 shadow-sm fw-900"
+                        style="min-width: 160px;">確認送出</button>
+                </div>
             </div>
         </div>
+
     </div>
 
 
@@ -233,7 +412,7 @@
                 }
             })
 
-            $(".supply_item").on("change",function(){
+            $(".supply_item").on("change", function () {
                 console.log($(".supply_item:checked").val());
 
                 let supply = $(".supply_item:checked").val();
@@ -248,7 +427,7 @@
                     $("#supply_group").addClass("is-invalid");
                     flag_supply = false;
                 }
-                
+
             })
 
             $("#okbtn").on("click", function () {
@@ -269,14 +448,40 @@
                     let supply = $(".supply_item:checked").val();
 
 
-                    let strHTML =
-                        `<h3>產品名稱:${$("#pname").val()}</h3>
-                    <h3>數量:${$("#pnum").val()}</h3>
-                    <h3>產品規格:${$("#pstandard").val()}</h3>
-                    <h3>容量:${$("#cup").val()}</h3>
-                    <h3>目前狀態:${pstatus}</h3>
-                    <h3>選取配料:${toppingArray.join("/")}</h3>
-                    <h3>選取配料:${supply}</h3>`;
+                    let strHTML = `
+                        <table class="table table-hover align-middle mb-0" style="font-size: 1.1rem;">
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold text-secondary" style="width: 30%;">🧋 產品名稱</td>
+                                    <td class="fw-900 text-dark">${$("#pname").val()}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-secondary">📦 數量</td>
+                                    <td><span class="badge bg-secondary fs-6 px-3">${$("#pnum").val()}</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-secondary">🧊 冰塊規格</td>
+                                    <td>${$("#pstandard").val() || "未填寫"}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-secondary">🥤 容量</td>
+                                    <td>${$("#cup").val()}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-secondary">🔔 目前狀態</td>
+                                    <td><span class="badge ${$("#pstatus").is(":checked") ? 'bg-success' : 'bg-danger'} fs-6 px-3">${pstatus}</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-secondary">🍮 選取配料</td>
+                                    <td class="text-primary fw-bold">${toppingArray.join(', ') || '無'}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-secondary">🔥 供應方式</td>
+                                    <td>${supply}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    `;
 
                     $("#showmessage").html(strHTML);
                 } else {
@@ -293,300 +498,4 @@
 
 </body>
 
-=======
-<!DOCTYPE html>
-<html lang="zh-TW">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/my.css">
-</head>
-
-<body class="bg-light">
-    <div class="container pt-5">
-        <div class="display-4 fw-900 text-center text-bg-primary py-2">產品建檔</div>
-        <div class="row justify-content-center">
-            <div class="col-ms-6 mt-3" id="s01">
-                <div class="mb-3 form-floating">
-                    <input type="text" class="form-control form-control-lg" name="" id="pname" placeholder="">
-                    <label for="" class="form-label">產品名稱(1-6)</label>
-                    <div class="valid-feedback">產品名稱符合規定</div>
-                    <div class="invalid-feedback">產品名稱不符合規定</div>
-                </div>
-
-                <div class="mb-3 form-floating">
-                    <input type="number" class="form-control form-control-lg" value="1" min="1" max="10" id="pnum">
-                    <label for="pnum" class="form-label">數量(1-10)</label>
-                    <div class="valid-feedback">數量符合規定</div>
-                    <div class="invalid-feedback">數量不符合規定</div>
-                </div>
-
-                <!-- 使用Datalist 做租 產品簡介(規格、備註) -->
-                <div class="mb-3 form-floating">
-                    <input type="text" class="form-control form-control-lg" list="datalistoption" id="pstandard"
-                        placeholder="請選擇或輸入規格">
-                    <label for="pstandard" class="form-label">產品規格</label>
-                    <datalist id="datalistoption">
-                        <option value="去冰"></option>
-                        <option value="微冰"></option>
-                        <option value="正常冰"></option>
-                    </datalist>
-                    <div class="valid-feedback">產品規格符合規定</div>
-                    <div class="invalid-feedback">產品規格不符合規定</div>
-                </div>
-
-                <div class="mb-3">
-                    <select name="" id="cup" class="form-select form-select-lg is-invalid">
-                        <option value="" disabled selected class="text-center fw-900">***請選擇容量***</option>
-                        <option value="特大(2000CC以上)">特大(2000CC以上)</option>
-                        <option value="大(1000-2000CC)">大(1000-2000CC)</option>
-                        <option value="中(500-1000CC)">中(500-1000CC)</option>
-                        <option value="小(500CC)">小(500CC)</option>
-                    </select>
-                    <div class="valid-feedback">已選擇容量</div>
-                    <div class="invalid-feedback">請選擇容量</div>
-                </div>
-
-                <div class="text-end-mt-4">
-                    <button class="btn btn-secondary" id="nobtn">取消</button>
-                    <button class="btn btn-primary" id="okbtn">確認</button>
-                </div>
-
-                <div class="mb-3 form-check form-switch">
-                    <input type="checkbox" name="" id="pstatus" class="form-check-input" checked>
-                    <label for="" class="form-check-label" id="pstatus_text">目前狀態:上架</label>
-                </div>
-
-                <div class="mb-3">
-                    <div class="form-label fw-900">可加配料：至少要加一個</div>
-                    <div id="topping_group" class="is-invalid">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input topping_item" value="珍珠">
-                            <label for="" class="form-check-label">珍珠</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input topping_item" value="椰果">
-                            <label for="" class="form-check-label">椰果</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input topping_item" value="蒟蒻">
-                            <label for="" class="form-check-label">蒟蒻</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input topping_item" value="布丁">
-                            <label for="" class="form-check-label">布丁</label>
-                        </div>
-                    </div>
-                    <div class="valid-feedback">配料已選擇</div>
-                    <div class="invalid-feedback">至少要加一個配料</div>
-                </div>
-
-                <div class="mb-3">
-                    <div class="form-label fw-900">供應方式：請選擇一項</div>
-                    <div id="supply_group" class="is-invalid">
-                        <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input supply_item" name="supply" value="冷飲">
-                            <label for="" class="form-check-label">冷飲</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input supply_item" name="supply" value="熱飲">
-                            <label for="" class="form-check-label">熱飲</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input supply_item" name="supply" value="冷熱皆可">
-                            <label for="" class="form-check-label">冷熱皆可</label>
-                        </div>
-                    </div>
-                    <div class="valid-feedback">已選擇供應方式</div>
-                    <div class="invalid-feedback">未選擇供應方式</div>
-                </div>
-
-
-            </div>
-        </div>
-
-        <div class="row mt-5 justtify-content-center d-none" id="s02">
-            <div class="display-5 fw-900 text-center text-bg-success py-2 rounded-3">產品建檔，明細確認</div>
-            <div class="col-md-6 p-3">
-                <div id="showmessage"></div>
-                <button class="btn btn-secondary mt-3 w-100">取消</button>
-                <button class="btn btn-warning mt-3 w-100">確認送出</button>
-            </div>
-        </div>
-    </div>
-
-
-
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-4.0.0.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        let flag_pname = false;
-        let flag_pnum = true;
-        let flag_pstandard = false;
-        let flag_cup = false;
-        let flag_topping = false;
-        let flag_supply = false;
-
-        $(function () {
-            //監聽#pname
-            $("#pname").on("input", function () {
-                console.log($(this).val().length);
-                let pname = $(this).val().trim();
-
-                if (pname.length >= 1 && pname.length <= 6) {
-                    //符合規定
-                    $(this).removeClass("is-invalid");
-                    $(this).addClass("is-valid");
-                    flag_pname = true;
-                } else {
-                    //不符合規定
-                    $(this).removeClass("is-valid");
-                    $(this).addClass("is-invalid");
-                    flag_pname = false;
-                }
-            });
-
-
-            //監聽#pnum
-            $("#pnum").on("input", function () {
-                console.log($(this).val());
-
-                let pnum = Number($(this).val());
-                if (pnum >= 1 && pnum <= 10) {
-                    //符合規定
-                    $(this).removeClass("is-invalid");
-                    $(this).addClass("is-valid");
-                    flag_pnum = true;
-                } else {
-                    //不符合規定
-                    $(this).removeClass("is-valid");
-                    $(this).addClass("is-invalid");
-                    flag_pnum = false;
-                }
-            });
-
-            $("#pstandard").on("input", function () {
-                console.log($(this).val().length);
-                let pstandard = $(this).val().trim();
-
-                if (pstandard.length >= 1 && pstandard.length <= 6) {
-                    //符合規定
-                    $(this).removeClass("is-invalid");
-                    $(this).addClass("is-valid");
-                    flag_pstandard = true;
-                } else {
-                    //不符合規定
-                    $(this).removeClass("is-valid");
-                    $(this).addClass("is-invalid");
-                    flag_pstandard = false;
-                }
-            });
-
-            $("#cup").on("change", function () {
-                console.log($(this).val());
-
-                let cup = $(this).val().trim();
-                if (cup != "") {
-                    //符合規定
-                    $(this).removeClass("is-invalid");
-                    $(this).addClass("is-valid");
-                    flag_cup = true;
-                } else {
-                    //不符合規定
-                    $(this).removeClass("is-valid");
-                    $(this).addClass("is-invalid");
-                    flag_cup = false;
-                }
-            });
-
-            $("#pstatus").on("change", function () {
-                console.log($(this).prop("checked"));
-
-                let pstatus = $(this).prop("checked");
-                if (pstatus) {
-                    $("#pstatus_text").text("目前狀態:上架");
-                } else {
-                    $("#pstatus_text").text("目前狀態:下架");
-                }
-            });
-
-            $(".topping_item").on("change", function () {
-                console.log($(".topping_item:checked").length);
-                let count = $(".topping_item:checked").length;
-                if (count > 0) {
-                    $("#topping_group").removeClass("is-invalid");
-                    $("#topping_group").addClass("is-valid");
-                    flag_topping = true;
-                } else {
-                    $("#topping_group").removeClass("is-valid");
-                    $("#topping_group").addClass("is-invalid");
-                    flag_topping = false;
-                }
-            })
-
-            $(".supply_item").on("change",function(){
-                console.log($(".supply_item:checked").val());
-
-                let supply = $(".supply_item:checked").val();
-                if (supply != undefined) {
-                    //符合規定
-                    $("#supply_group").removeClass("is-invalid");
-                    $("#supply_group").addClass("is-valid");
-                    flag_supply = true;
-                } else {
-                    //不符合規定
-                    $("#supply_group").removeClass("is-valid");
-                    $("#supply_group").addClass("is-invalid");
-                    flag_supply = false;
-                }
-                
-            })
-
-            $("#okbtn").on("click", function () {
-                if (flag_pname && flag_pnum && flag_pstandard && flag_cup && flag_topping && flag_supply) {
-                    $("#s02").removeClass("d-none")
-
-                    //三元運算子 if/else
-                    let pstatus = $("#pstatus").prop("checked") ? "上架" : "下架";
-
-                    //收集可加配料
-                    let toppingArray = [];
-                    $(".topping_item:checked").each(function () {
-                        console.log($(this).val());
-                        toppingArray.push($(this).val());
-                    });
-                    console.log(toppingArray);
-
-                    let supply = $(".supply_item:checked").val();
-
-
-                    let strHTML =
-                        `<h3>產品名稱:${$("#pname").val()}</h3>
-                    <h3>數量:${$("#pnum").val()}</h3>
-                    <h3>產品規格:${$("#pstandard").val()}</h3>
-                    <h3>容量:${$("#cup").val()}</h3>
-                    <h3>目前狀態:${pstatus}</h3>
-                    <h3>選取配料:${toppingArray.join("/")}</h3>
-                    <h3>選取配料:${supply}</h3>`;
-
-                    $("#showmessage").html(strHTML);
-                } else {
-                    Swal.fire({
-                        title: "錯誤",
-                        text: "請修正",
-                        icon: "error"
-                    });
-                    $("#s02").addClass("d-none")
-                }
-            });
-        });
-    </script>
-
-</body>
-
->>>>>>> 76dfd15788536ba12578bad55dc2930b54399780
 </html>
